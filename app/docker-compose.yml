@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  fastapi-app:
+    container_name: my-fastapi-app1
+    build:
+       .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./user.db//var/lib/mysql
+    volumes:
+      - ./app:/app
+    restart: always
